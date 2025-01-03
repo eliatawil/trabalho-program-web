@@ -1,0 +1,402 @@
+html{
+  scroll-behavior: smooth; /* A rolagem para a seção será feita de forma suave, criando uma transição visual agradável.*/
+}
+
+body{
+  background-color: #1F2235;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  padding-top: 60px;
+  border: 0px;
+  margin: 0px;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* Estilo do header */
+header#cabecalho {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 1000;
+  background-color: #1F2235;
+  color: #fff;
+  display: flex;
+  justify-content: space-between; /* Espaça os elementos */
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu{
+  margin-right: 5%;
+}
+
+/* Estilo da logo */
+.logo{
+  margin-left: 5%;
+}
+.logo a {
+  text-decoration: none;
+  font-size: 30px; 
+  font-weight: 800; 
+  text-transform: uppercase;
+  color: #ff4a57;
+}
+
+.menu ul {
+  list-style: none; /* Remove os marcadores de lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu ul li {
+  margin: 2px; /* Espaçamento entre os itens */
+}
+
+.menu ul a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  padding: 10px; /* Espaçamento interno */
+  color: #ffffff;
+  position: relative; /* Necessário para o pseudoelemento */
+  display: inline-block; /* Garante que o pseudoelemento funcione corretamente */
+  text-transform: capitalize;
+}
+
+.menu ul a::after {
+  content: ""; /* Cria o pseudoelemento */
+  position: absolute; /* Posiciona em relação ao link */
+  bottom: 0; /* Fica na parte inferior */
+  left: 0; /* Começa na esquerda */
+  width: 0; /* Largura inicial (invisível) */
+  height: 2px; /* Altura da borda */
+  background-color: #ffffff; /* Cor da borda */
+  transition: width 0.8s ease; /* Animação suave da largura */
+}
+
+.menu ul a:hover::after,
+.menu ul a:focus::after {
+  width: 100%; /* A borda se expande para o tamanho total */
+}
+
+/* Conteudo principal */
+main {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  margin: 0 auto; /* Centraliza o main no container */
+  padding-top: 70px;
+  max-width: 90%; /* Garante que o conteúdo ocupe no máximo 90% da largura */
+  box-sizing: border-box; /* Inclui padding na largura total */
+  color: #fff;
+}
+
+main h1{
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+main h2{
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+main p{
+  font-size: 14px
+}
+
+/* Home */
+.content{
+  width: 50%;
+  float: left;
+  margin-top: 90px;
+}
+
+.content span{
+  color: #ff4a57;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 1.5vw, 2rem);
+}
+
+.content p{
+  letter-spacing: 0;
+}
+
+.content p a{
+  letter-spacing: 0;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.img_me{
+  width: 40%;
+  margin: 0 auto;
+  float: right;
+}
+
+.img_me img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Redes sociais */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  float: left;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 24px; /* Tamanho do ícone */
+  color: #ff4a57; /* Cor padrão */
+  text-decoration: none; /* Remove sublinhado */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff; /* Cor ao passar o mouse */
+}
+
+/* Conteúdo sobre */
+section#sobre div.content{
+  float: right;
+}
+
+section#sobre div.content h1{
+  font-weight: 600;
+}
+
+#icon_sobre{
+  float: left;
+  margin-top: 80px;
+  width: 25%;
+  margin-left: 10%;
+}
+
+#icon_sobre img{
+  display: block;
+  max-width: 80%;
+
+}
+
+.tabela_info {
+  width: 100%; /* Preenche o espaço disponível */
+}
+
+.tabela_info td, .tabela_info th {
+  padding: 0px 0px 5px 0px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabela_info td:first-child {
+  font-weight: bold; /* Destaca a coluna de rótulos */
+}
+
+.btn_cv{
+  color: #fff;
+  font-size: 13px;
+  margin-top: 30px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  background: #ff4a57;
+  line-height: 10px;
+  border: none;
+  transition: all 0.4s ease-in-out 0s;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 20px 20px;
+  border-radius: 4px;
+}
+
+.btn_cv:hover{
+  background: #fff;
+  color: #ff4a57;
+}
+
+/* Conteúdo Portifólio */
+#portifolio h1{
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  margin-top: 100px;
+}
+
+#portifolio h1 span{
+  color: #ff4a57;
+}
+
+.sub_titulo{
+  display: block;
+  height: 2px;
+  width: 70px;
+  margin-bottom: 15px;
+  bottom: 25px;
+  position: relative;
+  left: 50%;
+  background-color: #ff4a57;
+}
+
+.conteudo_portifolio{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.block{
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.block h2{
+  font-weight: 300;
+  margin-top: 0px;
+}
+
+.block p{
+  font-weight: 200;
+}
+
+/* Conteúdo Formação */
+#formacao h1{
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  margin-top: 100px;
+}
+
+.conteudo_formacao{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.conteudo_formacao .block{
+  border: none;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 53%);
+  border-radius: 3px;
+}
+
+.icon_formacao{
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#formacao h1 span{
+  color: #ff4a57;
+}
+
+/* Contato */
+#contato{
+  width: 100%;
+}
+
+#contato h1{
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  margin-top: 100px;
+}
+
+#contato h1 span{
+  color: #ff4a57;
+}
+
+/* Formulário */
+.form-container {
+  width: 100%;
+  text-align: center;
+}
+
+.form-container input{
+  background-color: transparent;
+  height: 25px;
+  width: 55vh;
+}
+.form-container input,
+.form-container textarea,
+.form-container button {
+  padding: 6px 12px;
+  margin-bottom: 15px;
+  border: 0.5px solid #e3e3e3;
+  font-size: 14px;
+  font-family: 'poppins';
+  color: #fff;
+}
+
+.form-container .input-grupo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-container textarea {
+  resize: none;
+  height: 200px;
+  background-color: transparent;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #ff4a57;
+  outline: none; /* Remove o contorno padrão */
+  transition:  0.3s ease;
+}
+
+.form-container button {
+  color: #fff;
+  font-size: 13px;
+  margin-top: 30px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  background: #ff4a57;
+  line-height: 10px;
+  border: none;
+  transition: all 0.4s ease-in-out 0s;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 20px 20px;
+  border-radius: 4px;
+}
+
+.form-container button:hover {
+  background: #fff;
+  color: #ff4a57;
+  cursor: pointer;
+}
+
+/* Rodapé */
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 100px;
+}
+
+footer span{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
