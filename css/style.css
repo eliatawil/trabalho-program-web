@@ -15,28 +15,269 @@ a{
   text-decoration: none;
 }
 
+/* Para visualização desktop*/
+@media screen and (min-width: 1440px) {
+  main, header, footer {
+    width: 1440px;
+    margin: auto;
+  }
+
+  .form-container input{
+    width: 410px !important;
+  }
+}
+
+/* Desktop menores */
+@media screen and (min-device-width:961px) and (max-device-width:1440px) {
+  main, header, footer {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 960px) {
+  main, header, footer {
+    width: 95%;
+    margin: auto;
+  }
+
+  .form-container .input-grupo{
+    display: block !important;
+  }
+
+  .form-container input{
+    width: 95% !important;
+  }
+
+  .form-container textarea{
+    width: 100% !important;
+    height: 150px !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-device-width: 768px) and (min-device-width:481px) {
+  main, header, footer {
+    width: 95%;
+    margin: auto;
+  }
+
+  .menu {
+    display: none; /* O menu fica escondido inicialmente */
+    width: 100%;
+    background-color: #1F2235;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* O ícone de menu (☰) será exibido */
+  .menu-toggle {
+    display: block !important;
+    margin-right: 5%;
+    padding: 20px;
+  }
+
+  /* Quando o menu estiver visível, ele aparece em bloco */
+  .menu.show {
+    display:block;
+  }
+
+  /* Ajuste dos itens do menu em telas pequenas */
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end; /* Centraliza os itens */
+    margin-top: 30px !important;
+    gap: 10px;
+    transition: 0.8s ease;
+  }
+
+  .menu ul li {
+    margin: 10px 0;
+    border-bottom: #ddd 1px solid;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    height: 10vh;
+  }
+
+  section#home{
+      margin-top: -80px !important;
+  }
+
+  .social-icons{
+    gap: 20px !important;
+  }
+
+  .img_me img{
+    max-width: 90% !important;
+    margin-top: 150px;
+  }
+
+  #icon_sobre{
+    display: none;
+  }
+
+  section#sobre .content{
+    width: 100%;
+  }
+
+  .form-container .input-grupo{
+    display: block !important;
+  }
+
+  .form-container input{
+    width: 95% !important;
+  }
+
+  .form-container textarea{
+    width: 100% !important;
+    height: 150px !important;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  main, header, footer {
+    width: 95%;
+    margin: auto;
+  }
+
+  .menu {
+    display: none; /* O menu fica escondido inicialmente */
+    width: 100%;
+    background-color: #1F2235;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* O ícone de menu (☰) será exibido */
+  .menu-toggle {
+    display: block !important;
+    margin-right: 5%;
+    padding: 20px;
+  }
+
+  /* Quando o menu estiver visível, ele aparece em bloco */
+  .menu.show {
+    display:block;
+  }
+
+  /* Ajuste dos itens do menu em telas pequenas */
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end; /* Centraliza os itens */
+    margin-top: 30px !important;
+    gap: 10px;
+    transition: 0.8s ease;
+  }
+
+  .menu ul li {
+    margin: 10px 0;
+    border-bottom: #ddd 1px solid;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    height: 10vh;
+  }
+
+  section#home{
+      margin-top: -80px !important;
+      text-align: center;
+      width: 95%;
+  }
+
+  section#home .content{
+    width: 100%;
+    float: none;
+  }
+
+  section#home .social-icons{
+    float: none;
+    justify-content: center;
+  }
+
+  section#sobre{
+    width: 95%;
+  }
+
+  section#sobre .content{
+    width: 100% !important;
+    margin-left: 0px !important;
+    text-align: center;
+  }
+
+  section#sobre .tabela_info{
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .tabela_info tbody tr td{
+    font-size: 13px !important;
+  }
+
+  .social-icons{
+    gap: 20px !important;
+  }
+
+  .img_me{
+    display: none;
+  }
+
+  #icon_sobre{
+    display: none;
+  }
+
+  .form-container .input-grupo{
+    display: block !important;
+  }
+
+  .form-container input{
+    width: 90% !important;
+  }
+
+  .form-container textarea{
+    width: 100% !important;
+    height: 150px !important;
+  }
+
+  .conteudo_portifolio,
+  .conteudo_formacao{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
 /* Estilo do header */
-header#cabecalho {
-  position: fixed; 
+/* Estilo inicial do header sem sombra */
+header {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   z-index: 1000;
   background-color: #1F2235;
   color: #fff;
   display: flex;
-  justify-content: space-between; /* Espaça os elementos */
+  justify-content: space-between;
   align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Estilo do header com sombra ao rolar */
+header.scroll {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .menu{
-  margin-right: 5%;
+  margin-right: 3%;
 }
 
 /* Estilo da logo */
 .logo{
-  margin-left: 5%;
+  margin-left: 3%;
 }
 .logo a {
   text-decoration: none;
@@ -66,20 +307,51 @@ header#cabecalho {
   text-transform: capitalize;
 }
 
-.menu ul a::after {
+.menu ul li.destaque{
+  background-color: #ff4a57;
+  border-radius: 3px;
+  transition: 0.8s ease;
+  font-weight: 500;
+  border: none;
+}
+
+.menu ul a::after{
   content: ""; /* Cria o pseudoelemento */
   position: absolute; /* Posiciona em relação ao link */
   bottom: 0; /* Fica na parte inferior */
   left: 0; /* Começa na esquerda */
   width: 0; /* Largura inicial (invisível) */
   height: 2px; /* Altura da borda */
-  background-color: #ffffff; /* Cor da borda */
+  background-color: #fff; /* Cor da borda */
   transition: width 0.8s ease; /* Animação suave da largura */
 }
 
+.menu ul li.destaque:hover {
+  background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+  transition: 0.8s ease;
+}
+
+.menu ul li.destaque a:hover{
+  color: #ff4a57;
+  transition: 0.8s ease;
+  font-weight: 500;
+}
+
+.menu ul li.destaque a::after {
+  display: none; /* Remove o pseudoelemento */
+}
+
 .menu ul a:hover::after,
-.menu ul a:focus::after {
-  width: 100%; /* A borda se expande para o tamanho total */
+.menu ul a:focus::after,
+.menu ul a.active::after {
+  width: 100%;
+}
+
+/* Menu toggle - ícone ☰ */
+.menu-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  display: none; /* Inicialmente não mostrado */
 }
 
 /* Conteudo principal */
@@ -90,7 +362,6 @@ main {
   justify-content: center;
   margin: 0 auto; /* Centraliza o main no container */
   padding-top: 70px;
-  max-width: 90%; /* Garante que o conteúdo ocupe no máximo 90% da largura */
   box-sizing: border-box; /* Inclui padding na largura total */
   color: #fff;
 }
@@ -101,11 +372,19 @@ main h1{
 }
 
 main h2{
+  font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+}
+
+main h3{
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+main h3 a{
   font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
 main p{
-  font-size: 14px
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* Home */
@@ -192,7 +471,7 @@ section#sobre div.content h1{
 .tabela_info td, .tabela_info th {
   padding: 0px 0px 5px 0px;
   text-align: left;
-  font-size: 14px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .tabela_info td:first-child {
@@ -270,6 +549,18 @@ section#sobre div.content h1{
   font-weight: 200;
 }
 
+.block a{
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.5s ease;
+}
+
+.block a:hover{
+  color: #ff4a57;
+  transition: 0.5s ease;
+}
+
 /* Conteúdo Formação */
 #formacao h1{
   font-weight: 500;
@@ -335,7 +626,7 @@ section#sobre div.content h1{
   padding: 6px 12px;
   margin-bottom: 15px;
   border: 0.5px solid #e3e3e3;
-  font-size: 14px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-family: 'poppins';
   color: #fff;
 }
@@ -363,7 +654,6 @@ section#sobre div.content h1{
 
 .form-container button {
   color: #fff;
-  font-size: 13px;
   margin-top: 30px;
   letter-spacing: 0.6px;
   font-weight: 600;
@@ -388,15 +678,31 @@ section#sobre div.content h1{
 
 /* Rodapé */
 footer{
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: 100px;
   margin-top: 100px;
+  padding-bottom: 30px;
+}
+
+footer .social-icons{
+  display: flex;
+  justify-content: center;
+}
+
+footer .social-icons a{
+  color: #fff;
+}
+
+footer .social-icons a:hover{
+  color: #ff4a57;
 }
 
 footer span{
   color: #fff;
-  font-size: 14px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   font-weight: 400;
+  text-align: center;
+  margin-top: 30px;
 }
